@@ -7,10 +7,52 @@
         <title>CyborgEvent 24'</title>
         <link href="https://api.fontshare.com/v2/css?f[]=red-hat-display@600&display=swap" rel="stylesheet">
     </head>
+    <style>
+        .button {
+          display: inline-block;
+          border-radius: 39px;
+          background-color: black;
+          border: 2px solid deeppink;
+          color: deeppink;
+          text-align: center;
+          font-size: 20px;
+          padding: 20px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 4px 2px;
+        }
+        
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+        
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+        
+        .button:hover span {
+          padding-right: 25px;
+        }
+        
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+        </style>
+        
 
     <body
         style="display: flex;height: 100dvh;width: 100dvw;justify-content: center;flex-direction:column;align-items: center;overflow: hidden;background-color: #000;font-family: Red Hat Display;">
-        <h1 style="font-size: 3em;font-family: cyborg;color: #fff;font-weight: 100;">Cyborg 24'</h1>
+        <img src="cyborg.png" alt="" width="900" class="center">
+        <!--<h1 style="font-size: 3em;font-family: cyborg;color: #fff;font-weight: 100;">Cyborg 24'</h1>-->
         <h1 style="color: rgb(255, 255, 103);">
             Big things are Coming!
         </h1>
@@ -21,6 +63,8 @@
                 src: url(alien.ttf);
             }
         </style>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGzOZL1x1G2-SHCW5NV-GQeA_D3q5klX72pcvQcbMlnxpkCA/viewform?usp=sf_link"><button class="button" style="vertical-align:middle"><span>Register Now</span></button></a>
     </body>
 
 </html>
+
