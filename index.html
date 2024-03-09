@@ -1,70 +1,960 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="wide wow-animation" lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CyborgEvent 24'</title>
-        <link href="https://api.fontshare.com/v2/css?f[]=red-hat-display@600&display=swap" rel="stylesheet">
-    </head>
+  <head>
+    <!-- Site Title-->
+    <title>Cyborg Event 2024</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/icon.jpg" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css"
+      href="//fonts.googleapis.com/css?family=Fira+Sans:300,600,800,800i%7COpen+Sans:300,400,400i">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <script async src="https://kit.fontawesome.com/2f69883659.js" crossorigin="anonymous"></script>
     <style>
-        .button {
-          display: inline-block;
-          border-radius: 39px;
-          background-color: black;
-          border: 2px solid deeppink;
-          color: deeppink;
-          text-align: center;
-          font-size: 20px;
-          padding: 20px;
-          transition: all 0.5s;
-          cursor: pointer;
-          margin: 4px 2px;
-        }
-        
-        .button span {
-          cursor: pointer;
-          display: inline-block;
-          position: relative;
-          transition: 0.5s;
-        }
-        
-        .button span:after {
-          content: '\00bb';
-          position: absolute;
-          opacity: 0;
-          top: 0;
-          right: -20px;
-          transition: 0.5s;
-        }
-        
-        .button:hover span {
-          padding-right: 25px;
-        }
-        
-        .button:hover span:after {
-          opacity: 1;
-          right: 0;
-        }
-        </style>
-        
+      .ie-panel {
+        display: none;
+        background: #212121;
+        padding: 10px 0;
+        box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+        clear: both;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
 
-    <body
-        style="display: flex;height: 100dvh;width: 100dvw;justify-content: center;flex-direction:column;align-items: center;overflow: hidden;background-color: #000;font-family: Red Hat Display;">
-        <img src="cyborg.png" alt="" width="400" class="center">
-        <!--<h1 style="font-size: 3em;font-family: cyborg;color: #fff;font-weight: 100;">Cyborg 24'</h1>-->
-        <h1 style="color: rgb(255, 255, 103);">
-            Big things are Coming!
-        </h1>
-        <h2 style="color: rgb(78, 255, 78);">Stay Connected!</h2>
-        <style>
-            @font-face {
-                font-family: cyborg;
-                src: url(alien.ttf);
-            }
-        </style>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfGzOZL1x1G2-SHCW5NV-GQeA_D3q5klX72pcvQcbMlnxpkCA/viewform?usp=sf_link"><button class="button" style="vertical-align:middle"><span>Register Now</span></button></a>
-    </body>
+      html.ie-10 .ie-panel,
+      html.lt-ie-10 .ie-panel {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body style="overflow-x: hidden;">
+    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img
+          src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820"
+          alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a>
+    </div>
+    <div class="preloader">
+      <!-- <div class="cssload-container">
+        <svg class="filter" version="1.1">
+          <defs>
+            <filter id="gooeyness">
+              <fegaussianblur in="SourceGraphic" stddeviation="10" result="blur"></fegaussianblur>
+              <fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" result="gooeyness">
+              </fecolormatrix>
+              <fecomposite in="SourceGraphic" in2="gooeyness" operator="atop"></fecomposite>
+            </filter>
+          </defs>
+        </svg>
+        <div class="dots">
+          <div class="dot mainDot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        <p>Loading...</p>
+      </div> -->
+
+
+      <div class="loader"></div>
+      <style>
+        .loader {
+          display: inline-flex;
+          gap: 10px;
+        }
+
+        .loader:before,
+        .loader:after {
+          content: "";
+          height: 50px;
+          aspect-ratio: 1;
+          border-radius: 50%;
+          background:
+            radial-gradient(farthest-side, #000 95%, #0000) 35% 35%/10px 10px no-repeat #fff;
+          animation: l5 3s infinite;
+          transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes l5 {
+
+          0%,
+          11% {
+            background-position: 35% 35%
+          }
+
+          14%,
+          36% {
+            background-position: 65% 35%
+          }
+
+          38%,
+          61% {
+            background-position: 65% 65%
+          }
+
+          64%,
+          86% {
+            background-position: 35% 65%
+          }
+
+          88%,
+          100% {
+            background-position: 35% 35%
+          }
+        }
+      </style>
+
+      <!-- <div class="spinner">
+        <div class="spinner1"></div>
+      </div>
+      <style>
+        .spinner {
+          background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+          width: 150px;
+          height: 150px;
+          animation: spinning82341 1.7s linear infinite;
+          text-align: center;
+          border-radius: 75px;
+          filter: blur(1px);
+          box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+        }
+
+        .spinner1 {
+          background-color: rgb(0, 0, 0);
+          width: 150px;
+          height: 150px;
+          border-radius: 75px;
+          filter: blur(10px);
+        }
+
+        @keyframes spinning82341 {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+      </style> -->
+    </div>
+    <!-- Page-->
+    <header class="page-header">
+      <!-- RD Navbar-->
+      <div class="rd-navbar-wrap" style="background-color: #00000030;">
+        <nav style="background-color: #00000030;backdrop-filter:blur(4px)"
+          class="rd-navbar rd-navbar_transparent rd-navbar_boxed" data-layout="rd-navbar-fixed"
+          data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed"
+          data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-fixed"
+          data-lg-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static"
+          data-xxl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false"
+          data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="115px"
+          data-lg-stick-up-offset="35px" data-body-class="rd-navbar-absolute">
+          <!-- RD Navbar Top Panel-->
+          <!-- <div class="rd-navbar-top-panel">
+            <div class="rd-navbar-top-panel__main">
+              <div class="rd-navbar-top-panel__toggle rd-navbar-fixed__element-1 rd-navbar-static--hidden"
+                data-rd-navbar-toggle=".rd-navbar-top-panel__main"><span></span></div>
+              <div class="rd-navbar-top-panel__content">
+                <div class="rd-navbar-top-panel__left">
+                  <ul class="rd-navbar-items-list">
+                    <li>
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit__left"><span class="icon icon-sm icon-primary linear-icon-map-marker"></span>
+                        </div>
+                        <div class="unit__body">
+                          <p><a href="#">Address: 4578 Marmora Road, Glasgow, D04 89GR</a></p>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="unit flex-row align-items-center unit-spacing-xs">
+                        <div class="unit__left"><span class="icon icon-sm icon-primary linear-icon-telephone"></span>
+                        </div>
+                        <div class="unit__body">
+                          <ul class="list-semicolon">
+                            <li><a href="tel:#">(800) 123-0045</a></li>
+                            <li><a href="tel:#">(800) 123-0045</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="rd-navbar-top-panel__right">
+                  <ul class="list-inline-xxs">
+                    <li><a class="icon icon-xxs icon-gray-darker fa fa-facebook" href="#"></a></li>
+                    <li><a class="icon icon-xxs icon-gray-darker fa fa-twitter" href="#"></a></li>
+                    <li><a class="icon icon-xxs icon-gray-darker fa fa-google-plus" href="#"></a></li>
+                    <li><a class="icon icon-xxs icon-gray-darker fa fa-vimeo" href="#"></a></li>
+                    <li><a class="icon icon-xxs icon-gray-darker fa fa-youtube" href="#"></a></li>
+                    <li><a class="icon icon-xxs icon-gray-darker fa fa-pinterest-p" href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <div class="rd-navbar-inner rd-navbar-search-wrap" style="background-color: transparent;">
+            <!-- RD Navbar Panel-->
+            <div class="rd-navbar-panel rd-navbar-search-lg_collapsable"
+              style="background-color: transparent; border-bottom-color:#9aff26 ;">
+              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+              <!-- RD Navbar Brand-->
+              <div class="rd-navbar-brand"
+                style="background-color: transparent;padding: 10px;border-radius: 21px;overflow: hidden;"><a
+                  class="brand-name" href="index.html" style="background-color: transparent;">
+
+
+
+                  <!-- <img src="images/logo-344x67.png"
+                    alt="" width="172" height="33" />
+                   -->
+                  <div id="logobarx" style="background-color: transparent;">
+                    <div class="logotxt" style="background-color: transparent;">
+                      Cyborg 24'
+
+                    </div>
+                    <div class="descy">
+                      By department of ai/ds
+                    </div>
+                  </div>
+
+                </a></div>
+            </div>
+            <!-- RD Navbar Nav-->
+            <div class="rd-navbar-nav-wrap rd-navbar-search_not-collapsable">
+              <div class="rd-navbar-search_collapsable">
+                <ul class="rd-navbar-nav">
+                  <li class="active"><a href="" style="color: #fff;">By Department of AI/DS</a>
+                  </li>
+
+                  <li><a href="#" onclick="fRedir()" style="color: #fff;">Register!</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Swiper-->
+    <svg class=" defs">
+      <defs>
+        <lineargradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="50%" stop-color="#000000">
+            <animate attributename="stop-color" values="#000000; #000000; #000000" dur="5s" repeatcount="indefinite">
+            </animate>
+          </stop>
+          <stop offset="100%" stop-color="#000000">
+            <animate attributename="stop-color" values="#000000; #000000; #000000" dur="5s" repeatcount="indefinite">
+            </animate>
+          </stop>
+        </lineargradient>
+      </defs>
+    </svg>
+    <div class="swiper-container swiper-slider" data-effect="frame-trapeze" data-loop="true" data-autoplay="5500"
+      data-speed="1200" data-mousewheel="false" data-keyboard="true" data-frame-fill="url(#gradient1)">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="swiper-slide-img" style="background-image: url(images/bgslide1.png);"
+            data-swiper-anime="{ &quot;animation&quot;: &quot;swiperSlideRotate&quot;, &quot;duration&quot;: 2000, &quot;delay&quot;: 600 }">
+          </div>
+          <div class="swiper-slide-caption text-center context-dark">
+            <h1
+              data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 500 }"
+              style="font-family: cyb;font-weight: 100;color: #ff0; text-shadow: 5px 5px 0 rgb(0, 0, 0);">
+              Unleash Your Potential</h1>
+            <h3
+              data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 600 }">
+              Join the Tech Odyssey!</h3>
+            <div class="group-lg group-middle"
+              data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">
+              <a class="button button-primary button-shadow" href="#portfolio" data-custom-scroll-to="portfolio"
+                style="color: #000;">See all
+                Events</a><a class="button button-black button-shadow" href="#" onclick="fRedir()"
+                style="color: #fff;">Register Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-slide-img" style="background-image: url(images/bgslide2.jpg);"
+            data-swiper-anime="{ &quot;animation&quot;: &quot;swiperSlideRotate&quot;, &quot;duration&quot;: 2000, &quot;delay&quot;: 600 }">
+          </div>
+          <div class="swiper-slide-caption context-dark">
+            <h2
+              data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 500 }"
+              style="font-family: cyb;font-weight: 100;color: #ffffff; text-shadow: 5px 5px 0 rgb(255, 0, 106);">
+              Gear Up: <br class="d-none d-lg-block"> Join the Tech Adventure!</h2>
+            <div class="group-lg group-middle"
+              data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">
+              <a class="button button-black button-shadow" href="#portfolio" data-custom-scroll-to="portfolio"
+                style="color: #fff;">see
+                technical
+                events</a><a style="color: #000;" class="button button-primary button-shadow" href=""
+                onclick="fRedir()">Register
+                Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="swiper-slide-img" style="background-image: url(images/bgslide3.png);"
+            data-swiper-anime="{ &quot;animation&quot;: &quot;swiperSlideRotate&quot;, &quot;duration&quot;: 2000, &quot;delay&quot;: 600 }">
+          </div>
+          <div class="swiper-slide-caption context-dark">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-lg-7">
+                  <h2
+                    data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 500 }"
+                    style="font-family: cyb;font-weight: 100;color: #ffffff; text-shadow: 5px 5px 0 rgb(0, 0, 0);">
+                    Join the Fun: Let's Make Memories!</h2>
+                  <h5 class="text-width-2 block-centered"
+                    data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 600 }">
+                    Enjoy Non-Technical Fun Events!</h5>
+                  <div class="group-lg group-middle"
+                    data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">
+                    <a class="button button-black button-shadow" href="#portfolio" data-custom-scroll-to="portfolio"
+                      style="color: #fff;">see
+                      Non-technical events</a><a class="button button-primary button-shadow" href="#" onclick="fRedir()"
+                      style="color: #000;">Register
+                      Now</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev linear-icon-chevron-left"></div>
+      <div class="swiper-button-next linear-icon-chevron-right"></div>
+    </div>
+    <section class="section-xs section-cta bg-gray-dark text-center text-md-left"
+      style="background-image:url(./images/sky.jpg);background-attachment: fixed; background-size: cover;">
+      <div class="container">
+        <div class="row row-30 justify-content-between align-items-center">
+          <div class="col-12 col-md-8">
+            <h4>About the Event</h4>
+            <p>
+              "Cyborg 24' blends innovation, exploration, leadership, and teamwork. Dive into a dynamic symposium of
+              tech prowess and creativity. From challenges to exhibitions, spark curiosity and push boundaries while
+              fostering collaboration and leadership. Join us for an exciting journey into Cyborg 24'."
+            </p>
+            <div class="group-lg group-middle"
+              data-swiper-anime="{ &quot;animation&quot;: &quot;swiperContentStack&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 700 }">
+              <a style="color: #000000;" class="button button-primary button-shadow" href="#features"
+                data-custom-scroll-to="features">See all
+                Events</a><a style="color: #fff;" class="button button-black button-shadow" href="#"
+                onclick="fRedir()">Register Now</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- About us-->
+    <section class="bg-gray-lighter object-wrap">
+      <div class="bg-decor d-flex align-items-center justify-content-start"
+        data-parallax-scroll="{&quot;y&quot;: 50,  &quot;smoothness&quot;: 30}"><img src="images/bg-decor-4.png"
+          alt="" />
+      </div>
+      <div class="section-lg" style="background-color: #000; color: #fff;">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <h3 class="heading-decorated" style="color: #849dff;">Department of artificial intelligence and data
+                science</h3>
+              <h4 class="heading-decorated">About the Department</h4>
+              <p>To create globally competent industry-ready graduates in the field of Artificial Intelligence and Data
+                Science to solve societal problems through cutting-edge research and entrepreneurship skills with values
+                and ethics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="object-wrap__body object-wrap__body-sizing-1 object-wrap__body-md-right bg-image"
+        style="background-image: url(images/grd.svg)"></div>
+    </section>
+    <section class="section-md bg-default text-center" id="portfolio"
+      style="background-image: url(./images/grd.svg);background-size: cover;background:#000;background-attachment: fixed;">
+      <div class="bg-decor d-flex align-items-center"
+        data-parallax-scroll="{&quot;y&quot;: 50,  &quot;smoothness&quot;: 30}"><img src="images/bg-decor-6.png"
+          alt="" />
+      </div>
+      <div class="container">
+        <h4 class="heading-decorated" style="color: #fff;">Events</h4>
+        <div class="isotope-wrap row row-70">
+          <div class="col-sm-12">
+            <ul class="list-nav isotope-filters isotope-filters-horizontal"
+              style="background-color: #ffffff30;border-radius: 1em;">
+              <li><a id="ae" class="active" data-isotope-filter="*" data-isotope-group="gallery" href="#">All</a></li>
+              <li><a id="te" data-isotope-filter="Category 1" data-isotope-group="gallery" href="#">technical events</a>
+              </li>
+              <li><a id="nte" data-isotope-filter="Category 2" data-isotope-group="gallery" href="#">non
+                  technical events</a>
+              </li>
+            </ul>
+            <div class="isotope row" data-isotope-layout="fitRows" data-isotope-group="gallery">
+              <div id="t1" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1">
+                <a class="img-thumbnail-variant-3" href="#t1" style="border-radius: 21px;" onclick="showPop('t1')"><img
+                    src="images/events/t1.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">TECHNICAL</span>
+                  <div class="caption">
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">Paper Presentation</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="t2" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1"><a
+                  class="img-thumbnail-variant-3" href="#t2" onclick="showPop('t2')" style="border-radius: 21px;"><img
+                    src="images/events/t2.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">TECHNICAL</span>
+                  <div class="caption">
+                    <p class="heading-5 hover-top-element " style="background-color: #000;">TECHNICAL QUIZ</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="t3" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1"><a
+                  class="img-thumbnail-variant-3" href="#t3" onclick="showPop('t3')" style="border-radius: 21px;"><img
+                    src="images/events/t3.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">TECHNICAL</span>
+                  <div class="caption">
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">CODE DEBUGGING</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="t4" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 1">
+                <a class="img-thumbnail-variant-3" href="#t4" onclick="showPop('t4')" style="border-radius: 21px;"><img
+                    src="images/events/t4.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">TECHNICAL</span>
+                  <div class="caption">
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">POWER BI DATA VISUALISATION
+                    </p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="nt1" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a
+                  class="img-thumbnail-variant-3" href="#nt1" onclick="showPop('nt1')" style="border-radius: 21px;"><img
+                    src="images/events/nt1.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">NON TECHNICAL</span>
+                  <div class="caption">
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">Direction Damaka</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="nt2" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a
+                  class="img-thumbnail-variant-3" href="#nt2" onclick="showPop('nt2')" style="border-radius: 21px;"><img
+                    src="images/events/nt2.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">NON TECHNICAL</span>
+                  <div class="caption">
+
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">Mind Maze</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="nt3" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a
+                  class="img-thumbnail-variant-3" href="#nt3" onclick="showPop('nt3')" style="border-radius: 21px;"><img
+                    src="images/events/nt3.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
+                    class="label-custom label-white">NON TECHNICAL</span>
+                  <div class="caption">
+
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">Connections</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p><span
+                      class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+              <div id="nt4" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a
+                  class="img-thumbnail-variant-3" href="#nt4" onclick="showPop('nt4')" style="border-radius: 21px;">
+                  <img src="images/events/nt4.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" />
+                  <span class="label-custom label-white">NON TECHNICAL</span>
+                  <div class="caption">
+                    <p class="heading-5 hover-top-element" style="background-color: #000;">IPL Auction</p>
+                    <div class="divider"></div>
+                    <p class="small hover-bottom-element"></p>
+                    <span class="icon arrow-right linear-icon-arrow-right"></span>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pre-footer-corporate bg-image-7 bg-overlay-darkest">
+      <div class="container">
+        <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
+          <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3">
+            <h6>About</h6>
+            <p style="text-align: justify;">A dynamic symposium meticulously designed to serve as an innovative
+              collaboration platform, where
+              technical concepts and ideas take center stage! Whether you're an engineer, researcher, developer, or
+              enthusiast, this is your opportunity to share your insights, discoveries, and innovations with a global
+              audience. Join us and be a part of a vibrant community dedicated to fostering creativity, collaboration,
+              and technological advancement!</p>
+          </div>
+          <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            <h6>Coordinators</h6>
+            <ul class="list-xs">
+              <li>
+                <ul>
+                  <li>Staff-Coordinator</li>
+                  <li>Gopalakrishnan A, AP/AI-DS</li>
+                </ul>
+              </li>
+              <li>
+                <ul>
+                  <li>
+                    Student Coordinator
+                  </li>
+                  <li>Mukilan S, 3/AI-DS</li>
+                </ul>
+              </li>
+            </ul>
+            <br>
+            <h6>Links</h6>
+            <ul>
+              <li>
+                <p style="color: #849dff;" onclick="fRedir()">Register Now!</p>
+              </li>
+              <li>Coming Soon</li>
+            </ul>
+          </div>
+          <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            <h6>Map</h6>
+            <div class="mapouter">
+              <div class="gmap_canvas"><iframe width="400" height="400" id="gmap_canvas"
+                  src="https://maps.google.com/maps?q=knowledge+institute+of+technology%2C+kakapalayam&t=&z=20&ie=UTF8&iwloc=&output=embed"
+                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+
+                <style>
+                  .mapouter {
+                    position: relative;
+                    text-align: right;
+                    border-radius: 21px;
+                    overflow: hidden;
+                  }
+                </style><a href="https://www.mapembed.net">google maps embed</a>
+                <style>
+                  .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
+            <h6>Contacts</h6>
+            <ul class="list-xs">
+              <li>
+                <dl class="list-terms-minimal">
+                  <dt>Address</dt>
+                  <dd>Knowledge Institute of Technology
+                    KIOT-Campus, NH544, Kakapalayam,
+                    Salem, Tamilnadu – 637504 India.</dd>
+                </dl>
+              </li>
+              <li>
+                <dl class="list-terms-minimal">
+                  <dt>Phones</dt>
+                  <dd>
+                    <ul class="list-semicolon">
+                      <li><a href="tel:+91 6379 654 891">+91 6379 654 891</a></li>
+                      <li><a href="tel:+91 9788 003 810">+91 9788 003 810</a></li>
+                    </ul>
+                  </dd>
+                </dl>
+              </li>
+              <li>
+                <dl class="list-terms-minimal">
+                  <dt>E-mail</dt>
+                  <dd><a href="mailto:#">cyborgevent@gmail.com</a></dd>
+                </dl>
+              </li>
+              <li>
+                <dl class="list-terms-minimal">
+                  <dt>Event Timeline</dt>
+                  <dd>Mar 28, 9.00am - 4.45pm</dd>
+                </dl>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-corporate bg-gray-darkest">
+      <div class="container">
+        <div class="footer-corporate__inner">
+          <p class="rights"><span>CYBORG 24' -</span><span>&nbsp;</span><span class="copyright-year"></span>. All
+            Rights
+            Reserved. Design by <a href="https://rith1x.github.io/">Kiruthik Kumar, AI/DS</a></p>
+          <ul class="list-inline-xxs">
+            <li><a class="icon icon-xxs icon-primary fa fa-instagram" href="https://www.instagram.com/cyborgevent"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    </div>
+
+    <div class="modal__container" id="modal-container">
+      <div class="modal__content">
+        <div class="modal__close close-modal" title="Close">
+          <h6>information</h6>
+          <i class='fa-regular fa-circle-xmark'></i>
+        </div>
+
+        <img src="" alt="" class="modal__img" id="eventImg">
+
+        <h1 class="modal__title" id="eventName">title</h1>
+
+        <p class="modal__description" id="eventDesc">
+
+        </p>
+
+
+        <button class="modal__button modal__button-width" onclick="fRedir()">
+          Register Now!
+        </button>
+
+
+      </div>
+      <style>
+        /*=============== GOOGLE FONTS ===============*/
+        @import url('https://fonts.googleapis.com/css2?family=Gantari:wght@400;500&display=swap');
+
+        /*=============== VARIABLES CSS ===============*/
+        :root {
+          /*========== Colors ==========*/
+          --hue: 240;
+          --first-color: hsl(var(--hue), 16%, 18%);
+          --first-color-alt: hsl(var(--hue), 16%, 12%);
+          --title-color: hsl(var(--hue), 8%, 15%);
+          --text-color: hsl(var(--hue), 8%, 35%);
+          --body-color: hsl(var(--hue), 100%, 99%);
+          --container-color: #FFF;
+
+          /*========== Font and typography ==========*/
+          --body-font: 'Poppins', sans-serif;
+          --big-font-size: 1.5rem;
+          --normal-font-size: .938rem;
+
+          /*========== z index ==========*/
+          --z-modal: 1000;
+        }
+
+        @media screen and (min-width: 968px) {
+          :root {
+            --big-font-size: 1.75rem;
+            --normal-font-size: 1rem;
+          }
+        }
+
+
+        /*=============== MODAL ===============*/
+        .container {
+          margin-left: 1rem;
+          margin-right: 1rem;
+        }
+
+        .modal {
+          height: 100dvh;
+          display: grid;
+          place-items: center;
+
+        }
+
+        .infox {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 60px;
+          margin-top: 1em;
+          padding: 10px;
+          align-items: center;
+          justify-content: space-evenly;
+
+        }
+
+        .icos {
+          width: 100%;
+          align-items: center;
+          display: flex;
+          justify-content: space-evenly;
+
+        }
+
+        .icos div {
+          width: 100%
+        }
+
+        .datasx {
+          width: 100%;
+          align-items: center;
+          display: flex;
+          justify-content: space-evenly;
+
+        }
+
+        .datasx div {
+          width: 100%
+        }
+
+        .modal__container {
+          /* position: absolute; */
+          background-color: #00000050;
+          width: 100%;
+          height: 100%;
+          display: grid;
+          align-items: flex-end;
+          overflow: hidden;
+          z-index: 4500;
+          transition: all .3s;
+          position: fixed;
+          inset: 0;
+
+          z-index: var(--z-modal);
+          visibility: hidden;
+          opacity: 0;
+        }
+
+        .modal__content {
+          position: relative;
+          background-color: var(--container-color);
+          text-align: center;
+          padding: 1.6em;
+          border-radius: 1rem 1rem 0 0;
+          transition: all .3s;
+
+          /*=== Effect 1 ===*/
+          transform: translateY(10%);
+
+          /*=== Effect 2 ===*/
+          /* transform: scale(.5) translateY(10%); */
+
+          /*=== Effect 3 ===*/
+          /* transform: rotateX(65deg) scale(.75) translateY(10%);
+  transform-origin: 50% 100%; */
+        }
+
+        .modal__img {
+          width: 200px;
+          margin-bottom: .75rem;
+        }
+
+        .modal__close {
+          display: inline-flex;
+          background-color: #fff;
+          border-radius: .25rem;
+          color: rgb(106, 0, 0);
+          font-size: 1.5rem;
+          cursor: pointer;
+          width: 100%;
+          justify-content: space-between;
+        }
+
+        .modal__title {
+          font-size: var(--big-font-size);
+          color: var(--title-color);
+          font-weight: 500;
+        }
+
+        .modal__description {
+          margin-bottom: 1.5rem;
+          text-align: justify;
+          height: 150px;
+          padding-right: 10px;
+          overflow-y: scroll;
+        }
+
+        .modal__description::-webkit-scrollbar {
+          background-color: #fff;
+          width: 7px;
+        }
+
+        .modal__description::-webkit-scrollbar-thumb {
+          background-color: #000;
+        }
+
+        .modal__button-width {
+          width: 100%;
+          border: none;
+          background-color: #ffc100;
+          padding: 9px 10px;
+          border: solid 2px #000;
+        }
+
+        .modal__button-link {
+          display: block;
+          margin: 1rem auto 0;
+          background-color: transparent;
+          color: var(--first-color);
+          font-weight: 500;
+        }
+
+        /* Show modal */
+        .show-modal {
+          visibility: visible;
+          opacity: 1;
+        }
+
+        .show-modal .modal__content {
+          /*=== Effect 1 ===*/
+          transform: translateY(0);
+
+          /*=== Effect 2 ===*/
+          /* transform: scale(1) translateY(0); */
+
+          /*=== Effect 3 ===*/
+          /* transform: rotateX(0) scale(1) translateY(0); */
+        }
+
+        ::-webkit-scrollbar {
+          background-color: #000000;
+          width: 0px;
+        }
+
+
+
+
+        /*=============== BREAKPOINTS ===============*/
+        /* For small devices */
+        @media screen and (min-width: 576px) {
+          .modal__content {
+            margin: auto;
+            width: 380px;
+            border-radius: 1.25rem;
+          }
+
+          .modal__img {
+            width: 170px;
+          }
+        }
+      </style>
+    </div>
+    <script>
+      const closeBtn = document.querySelectorAll('.close-modal')
+
+      function closeModal() {
+        const modalContainer = document.getElementById('modal-container')
+        modalContainer.classList.remove('show-modal')
+      }
+      closeBtn.forEach(c => c.addEventListener('click', closeModal))
+
+
+      function showPop(data) {
+        const diaImg = document.getElementById("eventImg");
+        diaImg.src = `images/events/${data}.svg`;
+        const modalContainer = document.getElementById('modal-container')
+        modalContainer.classList.add('show-modal');
+        const eveName = document.getElementById("eventName");
+        const eveDesc = document.getElementById("eventDesc");
+        eveName.innerText = getEName(data);
+        eveDesc.innerText = getEDesc(data);
+
+        const venue = document.getElementById("venue")
+        const amount = document.getElementById("amount")
+        const time = document.getElementById("time")
+
+
+      }
+
+      function getEName(data) {
+        switch (data) {
+          case "t1":
+            return "PAPER PRESENTATION";
+            break;
+          case "t2":
+            return "TECHNICAL QUIZ";
+            break;
+          case "t3":
+            return "CODE DEBUGGING";
+            break;
+          case "t4":
+            return "POWER BI DATA VISUALIZATION";
+            break;
+          case "nt1":
+            return "DIRECTION DHAMAKA";
+            break;
+          case "nt2":
+            return "MINDMAZE";
+            break;
+          case "nt3":
+            return "CONNECTION";
+            break;
+          case "nt4":
+            return "IPL AUCTION";
+            break;
+        }
+      }
+
+      function getEDesc(data) {
+        switch (data) {
+          case "t1":
+            return "Presenters are encouraged to showcase their papers or ideas within the realm of technology, spanning any domain they prefer. Each presentation should be concise, lasting no longer than 5 minutes, with an additional 2 minutes allocated for questions from the audience. ";
+            break;
+          case "t2":
+            return "The technical quiz covers various tech areas: programming, algorithms, hardware, software, and new tech. Participants answer questions within a time limit, demonstrating their expertise and quick thinking. Get ready to test your skills!";
+            break;
+          case "t3":
+            return "Participants will receive a complex code snippet riddled with errors. Their challenge is to debug it and create a functional, executable code within the given timeframe. This exercise tests their ability to identify and resolve coding issues, showcasing their problem-solving and programming skills. ";
+            break;
+          case "t4":
+            return "The  event challenges participants to create compelling data visualisations using PowerBI within a given time frame. They'll demonstrate their ability to analyse data, select appropriate visualisations, and communicate insights effectively.";
+            break;
+          case "nt1":
+            return "To make it simple We will narrate you up with a short half of a story along with a climax having a serious twist and turns. Your job is to create your own sequence of events that make up the climax of the story.Participants have to narrate the sequence and will be considered winners who framed the sequence continues to the story and meaningful.";
+            break;
+          case "nt2":
+            return "Delve into the Mind Maze challenge, solving puzzles and racing against time with your team. Employ strategic thinking, unlock clues, and compete for the title of Mind Maze master to win exciting prizes!";
+            break;
+          case "nt3":
+            return "Embark on the Connection Game adventure, where you'll unravel puzzles and collaborate with your team to decode clues. Engage in strategic brainstorming, uncover connections, and vie for the coveted title of Connection Game Champion to seize thrilling rewards!";
+            break;
+          case "nt4":
+            return "Own your IPL franchise, bid smart for top talent, and secure victory in cricketing history by managing your team, budget, and fan support wisely. Cheer on your favorites, strategize with budget constraints, and seize victory to etch your name in cricketing lore! 🏏";
+            break;
+        }
+      }
+      function fRedir() {
+        fLink = "https://forms.gle/znJJthgMc7HE1s8z8"
+        window.open(fLink, '_blank');
+      }
+    </script>
+
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 
 </html>
-
