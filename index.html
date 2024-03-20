@@ -202,7 +202,7 @@
             <!-- RD Navbar Panel-->
             <div class="rd-navbar-panel rd-navbar-search-lg_collapsable"
               style="background-color: transparent; border-bottom-color:#9aff26 ;">
-              <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+              <!-- <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button> -->
               <!-- RD Navbar Brand-->
               <div class="rd-navbar-brand"
                 style="background-color: transparent;padding: 10px;border-radius: 21px;overflow: hidden;"><a
@@ -226,7 +226,7 @@
                 </a></div>
             </div>
             <!-- RD Navbar Nav-->
-            <div class="rd-navbar-nav-wrap rd-navbar-search_not-collapsable">
+            <!-- <div class="rd-navbar-nav-wrap rd-navbar-search_not-collapsable">
               <div class="rd-navbar-search_collapsable">
                 <ul class="rd-navbar-nav">
                   <li class="active"><a href="" style="color: #fff;">By Department of AI/DS</a>
@@ -236,7 +236,7 @@
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> -->
           </div>
         </nav>
       </div>
@@ -452,7 +452,8 @@
               <div id="nt1" class="col-12 col-md-6 col-lg-4 isotope-item" data-filter="Category 2"><a
                   class="img-thumbnail-variant-3" href="#nt1" onclick="showPop('nt1')" style="border-radius: 21px;"><img
                     src="images/events/nt1.svg" alt="" style="background-color: #e8d1ff;border-radius: 21px" /><span
-                    class="label-custom label-white">NON TECHNICAL</span>
+                    class="label-custom label-white">NON
+                    TECHNICAL</span>
                   <div class="caption">
                     <p class="heading-5 hover-top-element" style="background-color: #000;">Direction Damaka</p>
                     <div class="divider"></div>
@@ -635,7 +636,14 @@
         <img src="" alt="" class="modal__img" id="eventImg">
 
         <h1 class="modal__title" id="eventName">title</h1>
-
+        <div class="infox">
+          <div class="icos">
+            <i class="fa-solid fa-users"></i>
+            <div>
+              <p id="mem"></p>
+            </div>
+          </div>
+        </div>
         <p class="modal__description" id="eventDesc">
 
         </p>
@@ -663,7 +671,7 @@
           --container-color: #FFF;
 
           /*========== Font and typography ==========*/
-          --body-font: 'Poppins', sans-serif;
+          --body-font: 'Gantari', sans-serif;
           --big-font-size: 1.5rem;
           --normal-font-size: .938rem;
 
@@ -700,27 +708,29 @@
           margin-top: 1em;
           padding: 10px;
           align-items: center;
-          justify-content: space-evenly;
+          justify-content: center;
 
         }
 
         .icos {
-          width: 100%;
+          width: fit-content;
           align-items: center;
           display: flex;
-          justify-content: space-evenly;
+          gap: 10px;
+          justify-content: center;
 
         }
 
         .icos div {
-          width: 100%
+          width: 100%;
+
         }
 
         .datasx {
           width: 100%;
           align-items: center;
           display: flex;
-          justify-content: space-evenly;
+          justify-content: center;
 
         }
 
@@ -877,16 +887,44 @@
         modalContainer.classList.add('show-modal');
         const eveName = document.getElementById("eventName");
         const eveDesc = document.getElementById("eventDesc");
+        const mem = document.getElementById("mem");
+
         eveName.innerText = getEName(data);
         eveDesc.innerText = getEDesc(data);
+        mem.innerText = getMems(data);
 
-        const venue = document.getElementById("venue")
-        const amount = document.getElementById("amount")
-        const time = document.getElementById("time")
+
 
 
       }
-
+      function getMems(data) {
+        switch (data) {
+          case "t1":
+            return "Max 4 Heads/ Team";
+            break;
+          case "t2":
+            return "Max 2 Heads/ Team";
+            break;
+          case "t3":
+            return "Max 2 Heads/ Team";
+            break;
+          case "t4":
+            return "Max 2 Heads/ Team";
+            break;
+          case "nt1":
+            return "Max 2 Heads/ Team";
+            break;
+          case "nt2":
+            return "Max 2 Heads/ Team";
+            break;
+          case "nt3":
+            return "Max 4 Heads/ Team";
+            break;
+          case "nt4":
+            return "Max 2 Heads/ Team";
+            break;
+        }
+      }
       function getEName(data) {
         switch (data) {
           case "t1":
