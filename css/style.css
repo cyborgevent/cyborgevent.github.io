@@ -2313,7 +2313,7 @@ textarea.form-input {
 
 .list-nav {
 	position: relative;
-	transform: translate3d(0, -10px, 0);
+	transform: translate3d(0, -15px, 0);
 	margin-bottom: -10px;
 	margin-left: -15px;
 	margin-right: -15px;
@@ -2336,13 +2336,19 @@ textarea.form-input {
 }
 
 .list-nav>li a {
-	color: inherit;
+	color: #fff;
+	transition: all .3s ease-in-out;
 }
 
 .list-nav>li.active,
 .list-nav>li a.active,
 .list-nav>li>a:hover {
-	color: #80deea;
+	color: #833bff;
+	background-color: #424242;
+	box-shadow: 0 0 5px -2px #000;
+	padding-inline: 5px;
+	height: 100%;
+	border-radius: 6px;
 }
 
 .list-bordered {
@@ -3198,7 +3204,7 @@ a.thumbnail-classic-title:hover {
 }
 
 .desktop .img-thumbnail-variant-3:hover img {
-	filter: blur(2px) saturate(0);
+	filter: saturate(0);
 }
 
 .desktop .img-thumbnail-variant-3:hover .hover-top-element,
@@ -20300,7 +20306,7 @@ h3+.card-custom-group-wrap {
 	right: 140%;
 	width: 30%;
 	height: 30%;
-	filter: blur(3px) saturate(0);
+	filter: saturate(0);
 	border: 6px solid #F48E2A;
 	z-index: -1;
 }
