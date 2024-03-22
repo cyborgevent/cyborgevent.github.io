@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bus Route Search</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+            }
+
+            .container {
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            input[type="text"] {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                box-sizing: border-box;
+            }
+
+            #result {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <p>Buses Reach Campus at 09.00AM, and leave at 04.45PM<br>
+                More Info at <a href="https://kiot.ac.in/facilities/transport/">KIOT Transport Facility</a></p>
+            <h2>Search for KIOT Bus Routes</h2>
+            <input type="text" id="searchInput" placeholder="Enter area name...">
+            <div id="result"></div>
+        </div>
+        <script>
+            // Bus route data
+            // Bus route data
+            const busRoutes = [
+                { routeNo: "01", stops: ["KR Thoppur", "Steel Plant", "Maramangalathu Patty", "Medical College", "Pall Pannai", "Sithanoor", "Solampalam", "Puthu Road", "RDO Bye Pass", "KIOT"] },
+                { routeNo: "02", stops: ["Bhavani Bus Stand", "Anthiyur Pirivu", "Bhavani Old Bus Stand", "Kalingarayanpalayam", "Lakshmi Nagar", "Colony Hospital", "Komarapalayam", "Aangur Road", "Rajam Theater", "Kathari Pirivu", "Valaiyakaranur", "Pallakkapalayam", "Pachampalayam", "Kavandanur", "ICL", "Vaikundham", "Thalaiyur", "KIOT"] },
+                { routeNo: "03", stops: ["Salem Prabath", "KIOT"] },
+                { routeNo: "28", stops: ["Salem Gugai", "Linemedu", "KIOT"] },
+                { routeNo: "04", stops: ["Kanniyalam Patti", "Thevur", "Maylampatti", "Palakaran Kottai", "Kullampatti", "Moolapathai", "Vellari Velli", "Housing Board", "Edappadi", "Vellandi Valasu", "Sunnambu Soolai", "Rangampalayam", "Perivu Road", "Vellaiyampalayam", "Kuthadi Palayam", "Kalipatti Perivu Road", "R.K.Theater & Mill", "KIOT"] },
+                { routeNo: "06", stops: ["Namakkal Bus Stand", "Salem Road", "Chellappampatti", "Buthansanthai", "Kalangani", "Puthu Chathiram", "Andaloor Gate", "Athanoor", "Aaramathampalayam", "Oolaipatti", "Nadupatti", "Vellapillayar Kovil", "Venanthur", "A.Patti Mariyamman Kovil", "KIOT"] },
+                { routeNo: "07", stops: ["Sivadha Puram", "Panakadu", "Thirumalaigiri", "Nallampatty", "Murungapatty", "Chittar Kovil", "K.K Nagar", "Kadaiyam Patty", "Elampillai Santhi Studio", "Elampillai Bustand", "Perumagovundampatti", "Vembadithalam", "KIOT"] },
+                { routeNo: "08", stops: ["Aadaiyur", "Pakkanadu", "Vannakuttai", "Sowriyur", "Alamaram", "Jalagandapuram", "Kapprathampatti", "Panikkanur", "Etikuttai Medu", "Aegapuram", "Koothampalayam", "Thailampatti", "Thadikaranur", "Theppakuttai", "Perumagovundampatti", "Vembadithalam", "KIOT"] },
+                { routeNo: "09", stops: ["Dharmapuri", "Nallampalli", "Thomparakkampatti", "Palayamputhur Toll Gate", "Thopur", "Jodu Kuli", "Thevatipatti", "Poosari Patti", "Pannapatti", "Kamalapuram", "Omalur Bus Stand", "Puliyampatty", "Toll Gate", "Periyar University", "Karuppur Engg. College", "KIOT"] },
+                { routeNo: "10", stops: ["Salem Yercaud Adivaaram", "Law College", "Kollapatti", "Gorimadu", "Housing Board", "Central Jail", "Hasthampatty", "Vincent", "7-Arts College", "Javuli Kadai", "KIOT"] },
+                { routeNo: "11", stops: ["Kannakurichi", "Housing Unit", "Iyenthar Maaligahi", "Ramanathapuram", "Chinna Muniyappan Kovil", "Chinnathirupathi", "Manakkadu", "Gandhi Road", "Sundar Lodge", "KIOT"] },
+                { routeNo: "12", stops: ["Valari Gate", "T.Gode Bus Stand", "T.Gode - Salem Road", "Kailasampalayam", "Chinnathambi Palayam", "Vattur Road", "More Palayam", "Sembampalayam", "Kallukadai", "TCMS", "Suriyagoundampalayam", "KIOT"] },
+                { routeNo: "13", stops: ["Salem Vijay Hospital", "Ramakrishna Park", "Ramakrishna Road", "Saradha College", "Fair Lands", "Alagapuram", "Salem Five Roads", "KIOT"] },
+                { routeNo: "14", stops: ["Salem Pilliyar Nagar", "T.M.S.Set", "Pattakovil", "Rajaganapathikovil", "Natarajapuram", "Keerthi Nagar", "Peramanur", "Five Roads", "KIOT"] },
+                { routeNo: "15", stops: ["Old Bus Stand", "Five Roads", "Kannankuruchi", "Pettai Kovil", "Ammapet", "Kondalampatti", "Nethimedu", "New Bus Stand", "KIOT"] },
+                { routeNo: "16", stops: ["Mettur Thermal", "Gowri Circle", "Mettur Railway Gate", "Agraharam", "Mettur Dam", "Valaiyakaranur", "Pallakkapalayam", "Pachampalayam", "Vellandhi", "ICL", "Vaikundham", "Thalaiyur", "KIOT"] },
+                { routeNo: "17", stops: ["Salem Bus Stand", "Chinna Thirupathi", "Thevur", "Vellari Velli", "Edappadi", "Vellandi Valasu", "Kandhampalayam", "Thirumanur", "Papparapatti", "Pattukottai", "Pappankulam", "Kavundapadi", "Karipatti", "Elavanthi", "Vazhapadi", "Molasi", "KIOT"] },
+                { "routeNo": "18", "stops": ["Kuppanoor", "Valasiyur", "Palli Patti", "Veeranam", "Thaathampatti", "Mannaar Palayam Pirivu", "Vaaikka Pattarai", "Ammapet", "Holycross", "KIOT"] },
+                { "routeNo": "19", "stops": ["Vanavaasi", "Soorapalli", "Jalakandapuram", "Selavadai", "Tharamangalam", "Madathur", "Karikadai", "KIOT"] },
+                { "routeNo": "20", "stops": ["Raayar Palayam", "Unjanai", "Kumaramangalam Pirivu", "Mettu Palayam", "Elachipalayam", "Vaiyappam Malai", "Morangam", "Kotta Palayam", "Mallasamuthiram Sandai Pavadi", "Mallasamuthiram", "Kalipatti", "Attaiyampatti", "KIOT"] },
+                { "routeNo": "21", "stops": ["Javuli Kadai", "Gugai", "Pirapath", "KIOT"] },
+                { "routeNo": "22", "stops": ["Mettur Bus Stand", "Gunjandiyur", "Veerakal", "Nangavalli", "Sooragai", "Chinnappam Patti", "Elampillai", "KIOT"] },
+                { "routeNo": "23", "stops": ["Mutthanayacken Patti", "Paagal Patti", "Reddipatti Junction", "Sona College", "Ford Company", "Seeragapaadi", "KIOT"] },
+                { "routeNo": "24", "stops": ["Ponnama Pet Gate", "Pillukadai", "Thaathagapatti", "Nilavarapatti", "Panamaratthu Patti Pirivu", "KIOT"] },
+                { "routeNo": "25", "stops": ["Namagiri Pettai", "Kakaveri", "Singalanthapuram", "Rasipuram", "SRV School", "Naachipatti", "Sabayapuram", "Hospital", "Mariyamman Kovil (Attaiyampatti)", "KIOT"] },
+                { "routeNo": "26", "stops": ["Ammapettai", "Jothi", "Sarathas", "Ammapettai Colony", "Holy Cross", "Seelanaikanpatti Bye Pass", "KIOT"] },
+                { "routeNo": "27", "stops": ["Mecheri", "Tulasampatti", "Tharamangalam", "Kachupalli", "Konganapuram", "Kannandheri", "KIOT"] },
+                { "routeNo": "28", "stops": ["Salem Municipality Office", "Apsara Down", "Annadhanapatty", "Nethimedu", "KIOT"] },
+                { "routeNo": "29", "stops": ["Vellalapatti", "Karuppur", "Karumbalai", "Salem New Bustand", "Ram Complex", "Vidhyamandhir School", "3 - Roads", "Jawahar Mill", "KIOT"] },
+                { "routeNo": "30", "stops": ["Rangampalayam", "Erode Bus Stand", "Karungalpalayam", "Pallipalayam", "Veppadai", "Sankari", "KIOT"] },
+                { "routeNo": "31", "stops": ["Sithar Kovil", "Ealumathanoor", "Elampillai", "Vembadithalam", "KIOT"] }
+            ]
+
+            function searchBusRoutes(area) {
+                const result = busRoutes.filter(route => route.stops.some(stop => stop.toLowerCase().includes(area.toLowerCase())));
+                return result;
+            }
+
+
+            // Function to display search result
+            // Function to display search result
+            function displayResult(result) {
+                const resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '';
+                if (result.length === 0) {
+                    resultDiv.innerHTML = 'No matching bus routes found.';
+                } else {
+                    result.forEach(route => {
+                        let routeInfo = `<p>Route number: ${route.routeNo}</p>`;
+                        routeInfo += '<ul>';
+                        route.stops.forEach(stop => {
+                            routeInfo += `<li>${stop}</li>`;
+                        });
+                        routeInfo += '</ul>';
+                        resultDiv.innerHTML += routeInfo;
+                    });
+                }
+            }
+
+
+            // Event listener for search input
+            document.getElementById('searchInput').addEventListener('input', function () {
+                const searchValue = this.value.trim();
+                if (searchValue.length > 0) {
+                    const searchResult = searchBusRoutes(searchValue);
+                    displayResult(searchResult);
+                } else {
+                    document.getElementById('result').innerHTML = '';
+                }
+            });
+        </script>
+    </body>
+
+</html>
